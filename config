@@ -27,14 +27,112 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
+# There also is thec (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+mode "i3" {
+	bindsym Shift+q kill
+	
+	# focus the parent container
+	#bindsym a focus parent
+		
+	# focus the child container
+	#bindsym d focus child
+	
+	# change focus
+	bindsym j focus left
+	bindsym k focus down
+	bindsym l focus up
+	bindsym semicolon focus right
+	
+	# alternatively, you can use the cursor keys:
+	bindsym Left focus left
+	bindsym Down focus down
+	bindsym Up focus up
+	bindsym Right focus right
+	
+	# split in horizontal orientation
+	#bindsym h split h
+
+	# split in vertical orientation
+	#bindsym v split v
+
+	# enter fullscreen mode for the focused container
+	bindsym f fullscreen
+	
+	# change container layout (stacked, tabbed, toggle split)
+	bindsym s layout stacking
+	bindsym w layout tabbed
+	bindsym e layout toggle split
+
+
+	# switch to workspace
+	bindsym 1 workspace 1
+	bindsym 2 workspace 2
+	bindsym 3 workspace 3
+	bindsym 4 workspace 4
+	bindsym 5 workspace 5
+	bindsym 6 workspace 6
+	bindsym 7 workspace 7
+	bindsym 8 workspace 8
+	bindsym 9 workspace 9
+	bindsym 0 workspace 10
+
+	# move focused window
+	bindsym Shift+j move left
+	bindsym Shift+k move down
+	bindsym Shift+l move up
+	bindsym Shift+semicolon move right
+
+	# alternatively, you can use the cursor keys:
+	bindsym Shift+Left move left
+	bindsym Shift+Down move down
+	bindsym Shift+Up move up
+	bindsym Shift+Right move right
+
+	# toggle tiling / floating
+	bindsym Shift+space floating toggle
+	
+	# change focus between tiling / floating windows
+	bindsym space focus mode_toggle
+
+	# move focused container to workspace
+	bindsym Shift+1 move container to workspace 1
+	bindsym Shift+2 move container to workspace 2
+	bindsym Shift+3 move container to workspace 3
+	bindsym Shift+4 move container to workspace 4
+	bindsym Shift+5 move container to workspace 5
+	bindsym Shift+6 move container to workspace 6
+	bindsym Shift+7 move container to workspace 7
+	bindsym Shift+8 move container to workspace 8
+	bindsym Shift+9 move container to workspace 9
+	bindsym Shift+0 move container to workspace 10
+
+	# reload the configuration file
+	bindsym Shift+c reload
+	# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+	bindsym Shift+r restart
+	# exit i3 (logs you out of your X session)
+	bindsym Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really 	want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+
+} 
+bindsym $mod+c mode "i3"
+
+# focus the parent container
+bindsym $mod+a focus parent
+	
+# focus the child container
+#bindsym $mod+d focus child
 
 # change focus
 bindsym $mod+j focus left
@@ -47,19 +145,7 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
+	
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -68,23 +154,12 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
-
+	
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -110,12 +185,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -140,7 +209,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -151,14 +219,24 @@ bar {
 }
 
 #Augmenting the window pixel width
-new_window pixel 3
-new_float pixel 3
+#new_window pixel3
+#new_float pixel 3
 
 #Hide borders of windows on the edge of the screen
-hide_edge_borders vertical
+#hide_edge_borders vertical
 
 #Funny example 
 #for_window [title="x200: ~/Documents"] floating enabled
 
-for_window [class="Download", "Firefox"] floating enabled
+#for_window [class="Download", "Firefox"] floating enabled
 
+
+#Mapping keyboard layout to keys
+#Brazilian
+bindsym $mod+b exec setxkbmap br
+#Us intln
+bindsym $mod+n exec setxkbmap us intl
+
+
+bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
