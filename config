@@ -32,7 +32,7 @@ mode "i3"{
    bindsym Shift+Q kill; mode "default"
 
    # enter fullscreen mode for the focused container
-   bindsym f fullscreen; mode "default"
+   bindsym f fullscreen; mode "default"  
 
    # toggle tiling / floating
    bindsym Shift+space floating toggle; mode "default"
@@ -55,6 +55,8 @@ bindsym Shift+R restart; mode "default"
    bindsym Shift+asterisk move workspace 8; mode "default"
    bindsym Shift+parenleft move workspace 9; mode "default"
    bindsym Shift+parenright move workspace 10; mode "default"
+
+   bindsym Shift+V exec pavucontrol; mode "default"
 
    ##########################
    #Without-auto exit i3 mode commands
@@ -277,3 +279,6 @@ exec nm-applet
 exec volumeicon
 exec dropbox start
 #exec conky -c ~/.i3/init_conky &
+
+#Set a background color
+exec xsetroot -solid "#333333"
