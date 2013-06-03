@@ -56,8 +56,6 @@ bindsym Shift+R restart; mode "default"
    bindsym Shift+parenleft move workspace 9; mode "default"
    bindsym Shift+parenright move workspace 10; mode "default"
 
-   bindsym Shift+V exec pavucontrol; mode "default"
-
    ##########################
    #Without-auto exit i3 mode commands
    #########################
@@ -227,6 +225,17 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+mode "execcmd" {
+	bindsym v exec pavucontrol; mode "default"
+	bindsym n exec nautilus --no-desktop; mode "default"
+	bindsym g exec gedit; mode "default"
+
+	bindsym Return mode "default"
+     	bindsym Escape mode "default"
+}
+
+bindsym $mod+x mode "execcmd"
 
 # i3 bar
 #bar {
