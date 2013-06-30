@@ -27,6 +27,9 @@ mode "i3"{
    # screen lock
    #bindsym Shift+L mode "default"; exec slimlock
 
+   #Switched between one and dual-head
+   bindsym Shift+D exec ~/.i3/dual-head.sh; mode "default" 
+   bindsym Shift+M exec ~/.i3/mono-head.sh; mode "default"
 
    # kill focused window
    bindsym Shift+Q kill; mode "default"
@@ -224,6 +227,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
 
 mode "execcmd" {
@@ -287,7 +291,11 @@ bindsym Mod1+Shift+Tab focus left
 exec nm-applet
 exec volumeicon
 exec dropbox start
+exec wuala -enableAutologin -silent
 #exec conky -c ~/.i3/init_conky &
 
 #Set a background color
 exec xsetroot -solid "#333333"
+
+#notifies to be floating
+for_window [class="Xfce4-notifyd"] floating enable; border none
