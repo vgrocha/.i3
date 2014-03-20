@@ -98,6 +98,10 @@ bindsym Shift+R restart; mode "default"
    bindsym 9 workspace 9
    bindsym 0 workspace 10
 
+   #move workspace to external monitor/internal
+   bindsym o move workspace to output VGA-0; mode "default"
+   bindsym i move workspace to output LVDS-0; mode "default"
+   
 }
 bindsym $mod+c mode "i3"
 
