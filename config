@@ -235,7 +235,7 @@ bar {
 
 mode "execcmd" {
 	bindsym v exec pavucontrol; mode "default"
-	bindsym n exec nautilus --no-desktop; mode "default"
+	bindsym n exec nemo --no-desktop; mode "default"
 	bindsym g exec gedit; mode "default"
 
 	bindsym Return mode "default"
