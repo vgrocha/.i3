@@ -306,3 +306,6 @@ exec xsetroot -solid "#333333"
 
 #notifies to be floating
 for_window [class="Xfce4-notifyd"] floating enable; border none
+
+#xcalc to be floating
+for_window [title="Calculator"] floating enable
