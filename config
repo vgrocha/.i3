@@ -296,9 +296,10 @@ bindsym Mod1+Shift+Tab focus left
 
 #Startup programs
 exec nm-applet
-exec volumeicon
-exec dropbox start
-exec wuala -enableAutologin -silent
+#exec volumeicon
+exec ~/.dropbox-dist/dropboxd
+#exec hamster-time-tracker
+#exec wuala -enableAutologin -silent
 #exec conky -c ~/.i3/init_conky &
 
 #Set a background color
