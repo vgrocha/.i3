@@ -31,8 +31,8 @@ mode "i3"{
    #bindsym Shift+L mode "default"; exec slimlock
 
    #Switched between one and dual-head
-   bindsym Shift+D exec ~/.i3/dual-head.sh; mode "default" 
-   bindsym Shift+M exec ~/.i3/mono-head.sh; mode "default"
+   bindsym Shift+D exec ~/.i3/living-room.sh; mode "default" 
+   bindsym Shift+M exec ~/.i3/meeting-room.sh; mode "default"
 
    # kill focused window
    bindsym Shift+Q kill; mode "default"
